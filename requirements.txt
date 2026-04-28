@@ -1,0 +1,7 @@
+pandas
+numpy
+matplotlib
+scikit-learn
+tensorflow-cpu==2.21.0
+jupyter
+nbformat

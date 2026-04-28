@@ -1,0 +1,40 @@
+# Environnements virtuels
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / éditeurs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Fichiers temporaires
+*.tmp
+*.temp
+*.log
+
+# Archives
+*.zip
+*.7z
+*.rar
+*.tar.gz
+
+# Secrets potentiels
+.env
+.env.*
+*.pem
+*.key
+
+# Sorties locales éventuelles
+outputs/
+artifacts/
