@@ -28,9 +28,9 @@ Un tel modèle peut contribuer à :
 - filtrer automatiquement les messages suspects ;
 - réduire les faux messages promotionnels ou frauduleux ;
 - améliorer l’expérience utilisateur ;
-- alimenter un système de pré-classification ou de modération.
+- assister un système de modération ou de pré-classification.
 
-Dans ce contexte, l’enjeu n’est pas seulement d’obtenir de bonnes performances, mais aussi de construire une solution **simple, cohérente et défendable**.
+Dans ce contexte, l’objectif n’est pas seulement d’obtenir de bonnes performances, mais aussi de construire une solution **simple, cohérente et défendable**.
 
 ---
 
@@ -42,12 +42,12 @@ L’objectif principal est de répondre à la question suivante :
 
 Pour y répondre, le projet suit les étapes suivantes :
 
-1. charger et explorer les données ;
-2. préparer les messages textuels ;
-3. transformer le texte en séquences numériques ;
-4. entraîner plusieurs modèles de deep learning ;
-5. comparer les performances ;
-6. retenir le modèle le plus pertinent.
+1. chargement et exploration des données ;
+2. préparation et encodage des messages ;
+3. transformation du texte en séquences numériques ;
+4. entraînement de plusieurs modèles de deep learning ;
+5. comparaison des performances ;
+6. sélection du modèle le plus pertinent.
 
 ---
 
@@ -84,7 +84,7 @@ Les principales étapes de préparation sont les suivantes :
   - `ham -> 0`
   - `spam -> 1`
 - séparation entre variables explicatives (`X`) et variable cible (`y`) ;
-- découpage en jeu d’entraînement et jeu de test avec `train_test_split` ;
+- division en jeu d’entraînement et jeu de test avec `train_test_split` ;
 - tokenization du texte ;
 - transformation des SMS en séquences numériques ;
 - padding des séquences pour uniformiser leur longueur.
@@ -97,7 +97,7 @@ Deux architectures de deep learning ont été comparées :
 Ce premier modèle constitue une base simple, légère et efficace pour la classification de texte court.
 
 #### Modèle 2 — Embedding + LSTM
-Ce second modèle permet de prendre davantage en compte l’ordre des mots dans la séquence.
+Ce second modèle prend davantage en compte l’ordre des mots dans la séquence.
 
 ---
 
@@ -169,3 +169,119 @@ Le modèle retenu ne constitue pas à lui seul une solution industrielle complè
 ├── .gitignore
 ├── README.md
 └── requirements.txt
+```
+
+---
+
+## Technologies utilisées
+
+| Catégorie | Outils |
+|---|---|
+| Langage | Python |
+| Manipulation de données | pandas, NumPy |
+| Visualisation | Matplotlib |
+| Machine Learning / NLP | scikit-learn, TensorFlow / Keras |
+| Environnement | Jupyter Notebook, VS Code |
+| Versioning | Git, GitHub |
+
+---
+
+## Installation
+
+### 1. Cloner le dépôt
+
+```bash
+git clone <URL_DU_DEPOT>
+cd atm-spam-detector_Birane
+```
+
+### 2. Créer un environnement virtuel
+
+Sous Windows :
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+Sous macOS / Linux :
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### 3. Installer les dépendances
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Exécution
+
+Le projet peut être consulté de deux manières.
+
+### Option 1 — Lecture du notebook exécuté
+
+Ouvrir directement :
+
+```text
+notebooks/spam_detector_executed.ipynb
+```
+
+### Option 2 — Exécution du notebook clean
+
+Ouvrir :
+
+```text
+notebooks/spam_detector_clean.ipynb
+```
+
+puis exécuter les cellules dans l’ordre.
+
+---
+
+## Notebooks disponibles
+
+| Notebook | Description |
+|---|---|
+| `spam_detector_executed.ipynb` | Version exécutée avec résultats, tableaux et sorties visibles |
+| `spam_detector_clean.ipynb` | Version propre sans outputs, plus légère et plus facile à relancer |
+
+---
+
+## Limites du projet
+
+Le projet présente plusieurs limites qu’il faut reconnaître clairement :
+
+- le modèle utilise uniquement le **texte brut du message** ;
+- il ne prend pas en compte de contexte externe comme l’expéditeur, la fréquence ou l’historique utilisateur ;
+- le dataset reste de taille modérée ;
+- les performances observées dépendent du jeu de données utilisé ;
+- une bonne performance sur ce dataset ne garantit pas automatiquement une généralisation parfaite à des données réelles plus variées.
+
+---
+
+## Pistes d’amélioration
+
+Plusieurs améliorations pourraient être envisagées dans une version plus avancée :
+
+- nettoyage textuel plus poussé ;
+- test d’embeddings pré-entraînés ;
+- ajustement plus fin des hyperparamètres ;
+- gestion plus explicite du déséquilibre des classes ;
+- expérimentation avec d’autres architectures de NLP ;
+- ajout d’une matrice de confusion visualisée ;
+- intégration dans une API ou une application de démonstration.
+
+---
+
+## Conclusion
+
+Ce projet montre qu’un pipeline de deep learning simple, bien structuré et correctement évalué permet de construire un détecteur de SMS spam performant.
+
+Le principal enseignement est qu’un **modèle sobre, cohérent et bien préparé** peut obtenir d’excellents résultats sans recourir à une architecture inutilement complexe.
+
+Dans le cadre de ce projet, le modèle **Embedding + GlobalAveragePooling1D** constitue le meilleur compromis entre performance, lisibilité et simplicité.
