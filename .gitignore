@@ -1,40 +1,67 @@
-# Environnements virtuels
-.venv/
-venv/
-env/
-
-# Python
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-
-# Jupyter
-.ipynb_checkpoints/
-
-# OS / éditeurs
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
-
-# Fichiers temporaires
-*.tmp
-*.temp
-*.log
-
-# Archives
-*.zip
-*.7z
-*.rar
-*.tar.gz
-
-# Secrets potentiels
+# ── Secrets et credentials ────────────────────────────────────────────────────
 .env
 .env.*
 *.pem
 *.key
+*.crt
+credentials*
+secrets*
 
-# Sorties locales éventuelles
-outputs/
-artifacts/
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.python-version
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ── Environnements virtuels ──────────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+.notebook_tmp/
+
+# ── TensorFlow / Keras / cache de modèles ────────────────────────────────────
+*.h5
+*.keras
+*.pb
+*.tflite
+saved_model/
+checkpoints/
+logs/
+tf_hub_cache/
+tensorflow_hub_cache/
+*.weights.h5
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Archives ──────────────────────────────────────────────────────────────────
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# ── Logs et temporaires ──────────────────────────────────────────────────────
+*.log
+*.tmp
+tmp/
+temp/
+
+# ── IDE / Editor ─────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Claude Code ──────────────────────────────────────────────────────────────
+.claude/
