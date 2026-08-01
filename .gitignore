@@ -1,3 +1,6 @@
+# ── Fichiers personnels (ne pas pousser sur GitHub) ──────────────────────────
+pres revision AT&T ne pas push sur Git/
+
 # ── Secrets et credentials ────────────────────────────────────────────────────
 .env
 .env.*
